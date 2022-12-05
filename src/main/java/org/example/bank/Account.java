@@ -5,11 +5,11 @@ class Account {
 
     private int balance = 10000;
 
-    public void deposit(int amount) {
+    public synchronized void  deposit(int amount) {
         balance += amount;
     }
 
-    public boolean withdraw(int amount) {
+    public synchronized boolean withdraw(int amount) {
         if (balance > amount) {
             balance -= amount;
             return true;
